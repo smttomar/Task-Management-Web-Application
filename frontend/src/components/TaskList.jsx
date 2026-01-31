@@ -4,6 +4,8 @@ import {
     FaHourglassHalf,
     FaSpinner,
 } from "react-icons/fa";
+import { ImSpinner2 } from "react-icons/im";
+import { useState } from "react";
 
 const statusStyles = {
     Pending: {
@@ -21,6 +23,14 @@ const statusStyles = {
 };
 
 const TaskList = ({ tasks, deleteTask, updateTask }) => {
+    const [deletingId, setDeletingId] = useState(null);
+
+    const handleDelete = async (id) => {
+        setDeletingId(id);
+        await deleteTask(id);
+        setDeletingId(null);
+    };
+
     if (tasks.length === 0) {
         return (
             <div className="text-center text-stone-300 py-10">
@@ -67,11 +77,27 @@ const TaskList = ({ tasks, deleteTask, updateTask }) => {
                         </select>
 
                         <button
-                            onClick={() => deleteTask(task._id)}
-                            className="flex items-center gap-1 text-stone-200 hover:text-stone-300 font-medium hover:cursor-pointer"
+                            onClick={() => handleDelete(task._id)}
+                            disabled={deletingId === task._id}
+                            className={`flex items-center gap-2 font-medium transition
+                ${
+                    deletingId === task._id
+                        ? "text-stone-400 cursor-not-allowed"
+                        : "text-stone-200 hover:text-stone-300"
+                }
+              `}
                         >
-                            <FaTrashAlt />
-                            Delete
+                            {deletingId === task._id ? (
+                                <>
+                                    <ImSpinner2 className="animate-spin" />
+                                    Deleting...
+                                </>
+                            ) : (
+                                <>
+                                    <FaTrashAlt />
+                                    Delete
+                                </>
+                            )}
                         </button>
                     </div>
                 </div>
