@@ -7,7 +7,8 @@ import TaskList from "./components/TaskList";
 import TaskFilter from "./components/TaskFilter";
 import bgImage from "./assets/task2.png";
 
-const API_URL = "http://localhost:5000/api/tasks";
+const API_URL =
+    "https://task-management-web-application-production.up.railway.app/api/tasks";
 
 function App() {
     const [tasks, setTasks] = useState([]);
