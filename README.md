@@ -45,9 +45,9 @@ Backend:
 Task-Management/
 │
 ├── backend/
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
+│ ├── task.js
+│ ├── model.js
+│ ├── route.js
 │ ├── server.js
 │ └── package.json
 │
