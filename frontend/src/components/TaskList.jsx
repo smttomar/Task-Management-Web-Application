@@ -83,7 +83,7 @@ const TaskList = ({ tasks, deleteTask, updateTask }) => {
                 ${
                     deletingId === task._id
                         ? "text-stone-400 cursor-not-allowed"
-                        : "text-stone-200 hover:text-stone-300"
+                        : "text-stone-200 hover:text-stone-300 hover:cursor-pointer"
                 }
               `}
                         >
