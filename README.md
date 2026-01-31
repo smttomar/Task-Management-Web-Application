@@ -67,7 +67,7 @@ Task-Management/
 
 Clone the repository:
 
-git clone https://github.com/smttomar/task-management.git  
+git clone https://github.com/smttomar/Task-Management-Web-Application  
 cd task-management
 
 ---
