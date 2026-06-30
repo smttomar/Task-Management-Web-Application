@@ -8,7 +8,7 @@ import TaskFilter from "./components/TaskFilter";
 import bgImage from "./assets/task2.png";
 
 const API_URL =
-    "https://task-management-web-application-m07y.onrender.com";
+    "https://task-management-web-application-m07y.onrender.com/api/tasks";
 
 function App() {
     const [tasks, setTasks] = useState([]);
