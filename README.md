@@ -121,7 +121,7 @@ DELETE /api/tasks/:id → Delete a task
 ## 🌍 Deployment
 
 - Frontend deployed on Vercel
-- Backend deployed separately (Railway / Cyclic / Fly.io)
+- Backend deployed on Render
 - MongoDB hosted on MongoDB Atlas
 
 ---
